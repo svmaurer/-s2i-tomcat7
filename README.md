@@ -1,3 +1,6 @@
+s2i for Tomcat7
+###############
+
 s2i-tomcat7
 
 $ make
