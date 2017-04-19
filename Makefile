@@ -1,5 +1,5 @@
 
-IMAGE_NAME = tomcat7-centos7
+IMAGE_NAME = s2i-tomcat7
 
 .PHONY: build
 build:

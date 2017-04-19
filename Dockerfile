@@ -1,5 +1,5 @@
 
-# tomcat7-centos7
+# s2i-tomcat7
 FROM centos
 
 # TODO: Put the maintainer name in the image metadata
@@ -9,16 +9,16 @@ FROM centos
 # ENV BUILDER_VERSION 1.0
 
 # TODO: Set labels used in OpenShift to describe the builder image
-#LABEL io.k8s.description="Platform for building tomcat7" \
-#      io.k8s.display-name="builder tomcat7" \
-#      io.openshift.expose-services="8080:http" \
-#      io.openshift.tags="builder,tomcat,java,etc."
+LABEL io.k8s.description="Platform for building tomcat7" \
+      io.k8s.display-name="builder tomcat7" \
+      io.openshift.expose-services="8080:http" \
+      io.openshift.tags="builder,tomcat,java,etc." \
+      io.openshift.s2i.scripts-url="image:///usr/local/s2i"
 
 # TODO: Install required packages here:
 RUN yum install -y java-1.7.0-openjdk subversion maven tomcat && yum clean all -y
 
 # TODO (optional): Copy the builder files into /opt/app-root
-LABEL io.openshift.s2i.scripts-url=image:///usr/local/s2i
 COPY ./tomcat7/ /opt/app-root/tomcat7
 
 # TODO: Copy the S2I scripts to /usr/libexec/s2i, since openshift/base-centos7 image 
