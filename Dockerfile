@@ -16,7 +16,7 @@ LABEL io.k8s.description="Platform for building tomcat7" \
       io.openshift.s2i.scripts-url="image:///usr/local/s2i"
 
 # TODO: Install required packages here:
-RUN yum install -y java-1.7.0-openjdk subversion maven tomcat && yum clean all -y
+RUN yum install -y java-1.7.0-openjdk maven tomcat && yum clean all -y
 
 # TODO (optional): Copy the builder files into /opt/app-root
 COPY ./tomcat7/ /opt/app-root/tomcat7

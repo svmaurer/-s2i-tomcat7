@@ -12,7 +12,7 @@
         "creationTimestamp": null
       },
       "spec": {
-        "dockerImageRepository": "172.30.27.173:5000/openshift/s2i-tomcat7",
+        "dockerImageRepository": "172.30.27.173:5000/obugateway/s2i-tomcat7",
         "tags": [
           {
             "name": "latest"
@@ -25,6 +25,10 @@
               "tags": "builder,tomcat,java,war",
               "supports": "java",
               "version": "1.0"
+            },
+            "from": {
+              "Kind": "ImageStreamTag",
+              "Name": "latest"
             }
           }
         ]

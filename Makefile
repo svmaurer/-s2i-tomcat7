@@ -1,4 +1,3 @@
-
 IMAGE_NAME = s2i-tomcat7
 
 .PHONY: build
